@@ -33,6 +33,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
        val name = mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
         if (name != null && name != ""){
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         }
     }
 
@@ -42,6 +43,7 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         if (mName != "") {
             mSecurityPreferences.setStoredString(MotivationConstants.KEY.PERSON_NAME, mName)
             startActivity(Intent(this, MainActivity::class.java))
+            finish()
         } else {
             Toast.makeText(this, "Preencha o campo nome", Toast.LENGTH_SHORT).show()
         }
